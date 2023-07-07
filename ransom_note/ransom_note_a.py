@@ -3,7 +3,8 @@ class Solution(object):
         if len(ransomNote) > len(magazine):
             return False
         else:
-            for i in ransomNote:
-                if (ransomNote.count(i)) > (magazine.count(i)):
+            while len(ransomNote) > 0:
+                if (ransomNote.count(ransomNote[0])) > (magazine.count(ransomNote[0])):
                     return False
-            return True False
+                ransomNote = ransomNote.replace(ransomNote[0],'')
+            return True 
